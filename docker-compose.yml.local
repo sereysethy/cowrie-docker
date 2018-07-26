@@ -1,0 +1,19 @@
+version: "3.2"
+
+services:
+  cowrie:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cowrie
+    ports:
+     - "2222:2222"
+     - "2223:2223"
+    volumes:
+      # Map a local cowrie config dir into the container.
+      - "./etc:/cowrie/cowrie-git/etc"
+      # Make cowrie logs persistent through container recreates.
+      - "./data/var:/cowrie/cowrie-git/var"
+      - "./data/log:/cowrie/cowrie-git/log"
+      - "./data/dl:/cowrie/cowrie-git/dl"
