@@ -2,6 +2,7 @@ version: "3.2"
 
 services:
   cowrie:
+    container_name: cowrie
     restart: always
     build:
       context: .
