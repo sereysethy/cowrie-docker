@@ -6,7 +6,7 @@ services:
     restart: always
     build:
       context: .
-      dockerfile: ./cowrie-docker/Dockerfile
+      dockerfile: ./docker-cowrie/Dockerfile
     image: cowrie
     ports:
      - "2222:2222"
